@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="enemy_resource" format=3 uid="uid://dovxa03n0umxb"]
+
+[ext_resource type="Curve" uid="uid://bhrl4ssebphjh" path="res://resources/difficulty_scaling.tres" id="1_5r3ae"]
+[ext_resource type="Script" uid="uid://p0ack8t44dsi" path="res://scripts/enemy_resource.gd" id="1_g1ktc"]
+
+[resource]
+script = ExtResource("1_g1ktc")
+_name = "red soldier"
+type = 1
+max_health = 50
+speed = 600.0
+damage = 5.0
+special_attack = true
+special_attack_cooldown = 1.0
+defense = 4
+value = 12
+difficulty_scale = ExtResource("1_5r3ae")
+spawn_wave = 1
+metadata/_custom_type_script = "uid://p0ack8t44dsi"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t3xhtl5cbna7"
+path="res://.godot/imported/9mm Pistol Dry Fire.mp3-c39443636b79a336af1943349cb752c7.mp3str"
+
+[deps]
+
+source_file="res://sfx/Snake's SECOND Authentic Gun Sounds/& More/Pistol/MP3/9mm Pistol Dry Fire.mp3"
+dest_files=["res://.godot/imported/9mm Pistol Dry Fire.mp3-c39443636b79a336af1943349cb752c7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

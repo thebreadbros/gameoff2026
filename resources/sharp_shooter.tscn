@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d2yhu8pm4wj2p"]
+
+[ext_resource type="Script" uid="uid://gshnciqedgnk" path="res://Upgrade_base.gd" id="1_gl80b"]
+[ext_resource type="Resource" uid="uid://jku183s5m3lp" path="res://resources/Sharp_Shooter.tres" id="2_c3w3k"]
+[ext_resource type="Texture2D" uid="uid://bksrpvldarm7u" path="res://assets/crosshaiunanimated1.png" id="3_wbnl6"]
+
+[node name="upgrade" type="Node2D" unique_id=1986979281 node_paths=PackedStringArray("_sprite")]
+script = ExtResource("1_gl80b")
+_sprite = NodePath("Sprite2D")
+upgrade = ExtResource("2_c3w3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=44091052]
+texture = ExtResource("3_wbnl6")

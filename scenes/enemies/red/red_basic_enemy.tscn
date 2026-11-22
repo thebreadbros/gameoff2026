@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://c08gsq6fgxltf"]
+
+[ext_resource type="Script" uid="uid://dbj8k4frsfb1o" path="res://scenes/enemies/red/enemy_base.gd" id="1_4a7a2"]
+[ext_resource type="Resource" uid="uid://1ffiowlmbfvb" path="res://resources/Red_basic.tres" id="2_238jt"]
+[ext_resource type="Texture2D" uid="uid://d26ljxs3dymq" path="res://assets/enemies/game_jam_backup_red_world_enemy_placeholder.png" id="2_mw4ug"]
+
+[sub_resource type="Animation" id="Animation_mw4ug"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ljp4a"]
+resource_name = "die"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -18.849556]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_mg73x"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.5235988, 0.5235988, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5a46m"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.2), Vector2(1, 1), Vector2(1, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_238jt"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.2), Vector2(1, 1), Vector2(1, 0.8), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.17453292, 0.0, 0.17453292, 0.0, -0.17453292, 0.0, 0.17453292, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mg73x"]
+_data = {
+&"RESET": SubResource("Animation_mw4ug"),
+&"die": SubResource("Animation_ljp4a"),
+&"hit": SubResource("Animation_mg73x"),
+&"idle": SubResource("Animation_5a46m"),
+&"move": SubResource("Animation_238jt")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_238jt"]
+radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mw4ug"]
+radius = 7.071068
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mg73x"]
+radius = 102.122475
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5a46m"]
+radius = 206.08736
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1098019322 groups=["enemy"]]
+collision_layer = 6
+collision_mask = 0
+script = ExtResource("1_4a7a2")
+enemy_stats = ExtResource("2_238jt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1445785232]
+texture = ExtResource("2_mw4ug")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=484912734]
+libraries/ = SubResource("AnimationLibrary_mg73x")
+
+[node name="Timer" type="Timer" parent="." unique_id=879535113]
+one_shot = true
+
+[node name="death_timer" type="Timer" parent="." unique_id=1510948016]
+one_shot = true
+ignore_time_scale = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1579216287 groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1141236835]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_238jt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1522368158 groups=["enemy"]]
+visible = false
+shape = SubResource("CircleShape2D_mw4ug")
+
+[node name="Projectile_timer" type="Timer" parent="." unique_id=1355097445]
+wait_time = 2.0
+
+[node name="Special_attack_timer" type="Timer" parent="." unique_id=1567532873]
+one_shot = true
+
+[node name="knockback_timer" type="Timer" parent="." unique_id=1777731570]
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=2122117514 groups=["enemy"]]
+visible = false
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=145128380]
+shape = SubResource("CircleShape2D_mg73x")
+
+[node name="special_attack_cooldown_timer" type="Timer" parent="." unique_id=630848658]
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=999132462 groups=["enemy"]]
+visible = false
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=138701245]
+shape = SubResource("CircleShape2D_5a46m")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Projectile_timer" to="." method="_on_projectile_timer_timeout"]
+[connection signal="timeout" from="knockback_timer" to="." method="_on_knockback_timer_timeout"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="timeout" from="special_attack_cooldown_timer" to="." method="_on_special_attack_cooldown_timer_timeout"]

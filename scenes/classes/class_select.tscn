@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b4jdw4a5qdvlm"]
+
+[ext_resource type="Script" uid="uid://j8t2dnrk8v2o" path="res://scenes/classes/class_select.gd" id="1_1srkw"]
+[ext_resource type="Texture2D" uid="uid://dreuluox2e6wn" path="res://assets/classes/dani_class.png" id="1_uka4w"]
+[ext_resource type="Texture2D" uid="uid://6gngd24pn32d" path="res://assets/ui/button square idle.png" id="2_1srkw"]
+[ext_resource type="Texture2D" uid="uid://bqv0x5w82hqo4" path="res://assets/ui/button square clicked.png" id="3_omvqn"]
+[ext_resource type="Texture2D" uid="uid://dq3fooy03ta2s" path="res://assets/classes/henry_class.png" id="3_s1slx"]
+[ext_resource type="Texture2D" uid="uid://dptevym51gi8i" path="res://assets/classes/eddy_class.png" id="4_omvqn"]
+[ext_resource type="Texture2D" uid="uid://c7ld1d5386fmu" path="res://assets/ui/button square hover.png" id="4_rapg1"]
+[ext_resource type="Texture2D" uid="uid://5oyp2b4c43sy" path="res://assets/classes/michael_class.png" id="8_rapg1"]
+
+[node name="class_select" type="Node2D" unique_id=1340962242]
+script = ExtResource("1_1srkw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1045035878]
+
+[node name="Container" type="GridContainer" parent="." unique_id=1635785321]
+offset_left = -245.0
+offset_top = -58.0
+offset_right = 255.0
+offset_bottom = 434.0
+columns = 4
+
+[node name="TextureButton" type="TextureButton" parent="Container" unique_id=2089147173]
+layout_mode = 2
+texture_normal = ExtResource("2_1srkw")
+texture_pressed = ExtResource("3_omvqn")
+texture_hover = ExtResource("4_rapg1")
+stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/TextureButton" unique_id=1713160282]
+position = Vector2(60.499992, 59.99999)
+scale = Vector2(5, 5)
+texture = ExtResource("1_uka4w")
+
+[node name="TextureButton2" type="TextureButton" parent="Container" unique_id=2058465634]
+layout_mode = 2
+texture_normal = ExtResource("2_1srkw")
+texture_pressed = ExtResource("3_omvqn")
+texture_hover = ExtResource("4_rapg1")
+stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/TextureButton2" unique_id=355246551]
+position = Vector2(61, 60)
+scale = Vector2(5, 5)
+texture = ExtResource("4_omvqn")
+
+[node name="TextureButton3" type="TextureButton" parent="Container" unique_id=1141084506]
+layout_mode = 2
+texture_normal = ExtResource("2_1srkw")
+texture_pressed = ExtResource("3_omvqn")
+texture_hover = ExtResource("4_rapg1")
+stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/TextureButton3" unique_id=867058160]
+position = Vector2(59.999992, 60)
+scale = Vector2(5, 5)
+texture = ExtResource("3_s1slx")
+
+[node name="TextureButton4" type="TextureButton" parent="Container" unique_id=1508375820]
+layout_mode = 2
+texture_normal = ExtResource("2_1srkw")
+texture_pressed = ExtResource("3_omvqn")
+texture_hover = ExtResource("4_rapg1")
+stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/TextureButton4" unique_id=127044425]
+position = Vector2(60.000004, 60.000015)
+scale = Vector2(5, 5)
+texture = ExtResource("8_rapg1")
+
+[connection signal="button_up" from="Container/TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="Container/TextureButton2" to="." method="_on_texture_button_2_button_up"]
+[connection signal="button_up" from="Container/TextureButton3" to="." method="_on_texture_button_3_button_up"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cfb63d12w63fj"]
+
+[ext_resource type="Script" uid="uid://n2vmpkj17aqx" path="res://scenes/enemies/enemy_projectile.gd" id="1_lnuoc"]
+[ext_resource type="Texture2D" uid="uid://c4j0iyg1wo5u1" path="res://assets/hand.png" id="2_2axcy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e58y6"]
+radius = 6.0827627
+
+[node name="Area2D" type="Area2D" unique_id=269719635 groups=["EnemyProjectile"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_lnuoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1132811511]
+shape = SubResource("CircleShape2D_e58y6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=126679464]
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(-1.1920929e-07, 1.1920929e-07)
+scale = Vector2(1.5555557, 1.5555557)
+texture = ExtResource("2_2axcy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

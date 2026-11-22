@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0y7nj6so18p7"
+path="res://.godot/imported/32 SW Eject One Casing.wav-9edc827c18a6719781f875490b502d7c.sample"
+
+[deps]
+
+source_file="res://sfx/Snake's SECOND Authentic Gun Sounds/& More/Revolver/32 SW Long/WAV/32 SW Eject One Casing.wav"
+dest_files=["res://.godot/imported/32 SW Eject One Casing.wav-9edc827c18a6719781f875490b502d7c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

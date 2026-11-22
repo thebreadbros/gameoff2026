@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="enemy_resource" format=3 uid="uid://1ffiowlmbfvb"]
+
+[ext_resource type="Curve" uid="uid://bhrl4ssebphjh" path="res://resources/difficulty_scaling.tres" id="1_27h5v"]
+[ext_resource type="Script" uid="uid://p0ack8t44dsi" path="res://scripts/enemy_resource.gd" id="1_hqrgl"]
+
+[resource]
+script = ExtResource("1_hqrgl")
+_name = "red child"
+max_health = 5
+speed = 1000.0
+damage = 3.0
+defense = 2
+value = 5
+difficulty_scale = ExtResource("1_27h5v")
+spawn_wave = 1
+metadata/_custom_type_script = "uid://p0ack8t44dsi"

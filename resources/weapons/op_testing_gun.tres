@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="weapon_resource" format=3 uid="uid://eg5l0c1bppu2"]
+
+[ext_resource type="Script" uid="uid://y8kexpxbwy2i" path="res://scripts/weapon_resource.gd" id="1_7ppy3"]
+[ext_resource type="Texture2D" uid="uid://dy2ulpaymnn6l" path="res://assets/pistol.png" id="1_erlae"]
+
+[resource]
+script = ExtResource("1_7ppy3")
+weapon_name = "OP"
+_texture = ExtResource("1_erlae")
+damage = 100000
+pierce = 100000
+cooldown = 0.001
+speed = 100.0
+projectile_amount = 4
+projectile_spread = 10.0
+projectile_lifetime = 100000.0
+metadata/_custom_type_script = "uid://y8kexpxbwy2i"

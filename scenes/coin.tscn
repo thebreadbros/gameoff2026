@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://0a3kw1aucwi5"]
+
+[ext_resource type="Script" uid="uid://hgtrl8871obm" path="res://pickup.gd" id="1_i64fm"]
+[ext_resource type="Texture2D" uid="uid://c6pwpv1m4ug2v" path="res://assets/game_jam_coin.png" id="2_11l1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d14el"]
+radius = 2.0
+
+[node name="Area2D" type="Area2D" unique_id=509185912 groups=["Pickup"]]
+z_index = 2
+script = ExtResource("1_i64fm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1317279401]
+shape = SubResource("CircleShape2D_d14el")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1082706216]
+texture = ExtResource("2_11l1o")

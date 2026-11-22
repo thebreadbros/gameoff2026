@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Class_Resource" format=3 uid="uid://c2w3a87q7yp3y"]
+
+[ext_resource type="Script" uid="uid://d2i2gup17i0kk" path="res://scripts/class_resource.gd" id="1_yv0hr"]
+[ext_resource type="Resource" uid="uid://cdm712i2c0m51" path="res://resources/weapons/pistol.tres" id="2_vjlhl"]
+
+[resource]
+script = ExtResource("1_yv0hr")
+max_health = 5
+speed = 150.0
+dash_speed = 200.0
+starting_weapon = ExtResource("2_vjlhl")
+metadata/_custom_type_script = "uid://d2i2gup17i0kk"

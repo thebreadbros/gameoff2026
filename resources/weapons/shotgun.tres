@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="weapon_resource" format=3 uid="uid://844l2lrcshnh"]
+
+[ext_resource type="Texture2D" uid="uid://maxgcj6k18h8" path="res://assets/icon.svg" id="1_4rfis"]
+[ext_resource type="Script" uid="uid://y8kexpxbwy2i" path="res://scripts/weapon_resource.gd" id="1_v4xi8"]
+
+[resource]
+script = ExtResource("1_v4xi8")
+weapon_name = "Shot Gun"
+_texture = ExtResource("1_4rfis")
+damage = 5
+pierce = 3
+cooldown = 0.7
+speed = 400.0
+projectile_amount = 2
+projectile_spread = 10.0
+projectile_lifetime = 1.0
+metadata/_custom_type_script = "uid://y8kexpxbwy2i"

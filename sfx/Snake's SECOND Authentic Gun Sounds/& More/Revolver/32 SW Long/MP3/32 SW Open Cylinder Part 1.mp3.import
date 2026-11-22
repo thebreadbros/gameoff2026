@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctvdcfgh841uq"
+path="res://.godot/imported/32 SW Open Cylinder Part 1.mp3-31167eadc07ee0c04093bf81fff77b2b.mp3str"
+
+[deps]
+
+source_file="res://sfx/Snake's SECOND Authentic Gun Sounds/& More/Revolver/32 SW Long/MP3/32 SW Open Cylinder Part 1.mp3"
+dest_files=["res://.godot/imported/32 SW Open Cylinder Part 1.mp3-31167eadc07ee0c04093bf81fff77b2b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="enemy_resource" format=3 uid="uid://l4aqm2u7cf5l"]
+
+[ext_resource type="Curve" uid="uid://bhrl4ssebphjh" path="res://resources/difficulty_scaling.tres" id="1_5ybst"]
+[ext_resource type="Script" uid="uid://p0ack8t44dsi" path="res://scripts/enemy_resource.gd" id="1_f73b3"]
+
+[resource]
+script = ExtResource("1_f73b3")
+_name = "red basic elite"
+max_health = 60
+speed = 1000.0
+damage = 5.0
+defense = 8
+value = 15
+difficulty_scale = ExtResource("1_5ybst")
+spawn_wave = 5
+metadata/_custom_type_script = "uid://p0ack8t44dsi"

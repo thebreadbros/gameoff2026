@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="enemy_resource" format=3 uid="uid://bsjyuykym0eqk"]
+
+[ext_resource type="Script" uid="uid://p0ack8t44dsi" path="res://scripts/enemy_resource.gd" id="1_8bwy1"]
+[ext_resource type="Curve" uid="uid://bhrl4ssebphjh" path="res://resources/difficulty_scaling.tres" id="1_21glx"]
+[ext_resource type="PackedScene" uid="uid://cfb63d12w63fj" path="res://scenes/enemies/enemy_projectile.tscn" id="1_oq8dk"]
+
+[resource]
+script = ExtResource("1_8bwy1")
+_name = "red projectile"
+type = 2
+max_health = 15
+speed = 1200.0
+damage = 6.0
+defense = 6
+projectiles = true
+projectile_speed = 100.0
+projectile_amount = 1
+projectile_cooldown = 2.0
+projectile_scene = ExtResource("1_oq8dk")
+value = 8
+difficulty_scale = ExtResource("1_21glx")
+spawn_wave = 1
+metadata/_custom_type_script = "uid://p0ack8t44dsi"

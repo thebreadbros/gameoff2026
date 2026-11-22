@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://chmscbhcqbp21"]
+
+[ext_resource type="Script" uid="uid://d3uv63eavpixy" path="res://scripts/title_screen.gd" id="1_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://owi3vh7eo03s" path="res://assets/ui/button wide idle.png" id="2_mgrm8"]
+[ext_resource type="Texture2D" uid="uid://b6mec2pt0buhg" path="res://assets/ui/button wide clicked.png" id="3_dc4i4"]
+[ext_resource type="Texture2D" uid="uid://cmipiwqwor0v0" path="res://assets/ui/button wide hover.png" id="4_e54dn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3yumr"]
+font_size = 57
+
+[node name="title" type="Node2D" unique_id=924049656]
+script = ExtResource("1_sa3yf")
+
+[node name="Button" type="TextureButton" parent="." unique_id=280380305]
+offset_left = -512.0
+offset_top = 43.0
+offset_right = -396.0
+offset_bottom = 121.0
+texture_normal = ExtResource("2_mgrm8")
+texture_pressed = ExtResource("3_dc4i4")
+texture_hover = ExtResource("4_e54dn")
+
+[node name="Label" type="Label" parent="Button" unique_id=775713649]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 20.0
+offset_right = 211.0
+offset_bottom = 98.0
+text = "Play"
+label_settings = SubResource("LabelSettings_3yumr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=19129669]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

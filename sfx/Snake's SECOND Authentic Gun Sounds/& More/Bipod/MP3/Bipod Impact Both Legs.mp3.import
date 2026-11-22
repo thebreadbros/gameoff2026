@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boumqqtfdxgss"
+path="res://.godot/imported/Bipod Impact Both Legs.mp3-92d61c9c7aff5cea2c9b806820c04174.mp3str"
+
+[deps]
+
+source_file="res://sfx/Snake's SECOND Authentic Gun Sounds/& More/Bipod/MP3/Bipod Impact Both Legs.mp3"
+dest_files=["res://.godot/imported/Bipod Impact Both Legs.mp3-92d61c9c7aff5cea2c9b806820c04174.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

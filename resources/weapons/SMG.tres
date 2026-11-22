@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="weapon_resource" format=3 uid="uid://vqy41usg1yd2"]
+
+[ext_resource type="Script" uid="uid://y8kexpxbwy2i" path="res://scripts/weapon_resource.gd" id="1_1qin8"]
+[ext_resource type="Texture2D" uid="uid://dy2ulpaymnn6l" path="res://assets/pistol.png" id="1_oio40"]
+
+[resource]
+script = ExtResource("1_1qin8")
+weapon_name = "SMG"
+_texture = ExtResource("1_oio40")
+damage = 1
+pierce = 1
+cooldown = 0.1
+speed = 350.0
+projectile_amount = 1
+projectile_lifetime = 10.0
+metadata/_custom_type_script = "uid://y8kexpxbwy2i"

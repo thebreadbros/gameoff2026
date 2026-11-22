@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ctiw8sousyom4"]
+
+[ext_resource type="Script" uid="uid://gshnciqedgnk" path="res://Upgrade_base.gd" id="1_2nss7"]
+[ext_resource type="Script" uid="uid://20drklt0scs0" path="res://scripts/upgrade_resource.gd" id="2_4j554"]
+[ext_resource type="Texture2D" uid="uid://iknrcl0ms3a1" path="res://assets/dumbell.png" id="3_lhfye"]
+
+[sub_resource type="Resource" id="Resource_qpc5x"]
+script = ExtResource("2_4j554")
+texture = ExtResource("3_lhfye")
+damage_buff = 7
+cost = 20
+metadata/_custom_type_script = "uid://20drklt0scs0"
+
+[node name="upgrade" type="Node2D" unique_id=1986979281 node_paths=PackedStringArray("_sprite")]
+script = ExtResource("1_2nss7")
+_sprite = NodePath("Sprite2D")
+upgrade = SubResource("Resource_qpc5x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=44091052]
+texture = ExtResource("3_lhfye")

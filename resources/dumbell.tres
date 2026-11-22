@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade_Resource" format=3 uid="uid://bbtbvv2rptnjw"]
+
+[ext_resource type="Script" uid="uid://20drklt0scs0" path="res://scripts/upgrade_resource.gd" id="1_jqedg"]
+[ext_resource type="Texture2D" uid="uid://iknrcl0ms3a1" path="res://assets/dumbell.png" id="2_4qt5m"]
+
+[resource]
+script = ExtResource("1_jqedg")
+texture = ExtResource("2_4qt5m")
+damage_buff = 7
+cost = 20
+metadata/_custom_type_script = "uid://20drklt0scs0"
