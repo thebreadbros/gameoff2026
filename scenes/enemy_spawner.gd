@@ -5,6 +5,7 @@ extends Node2D
 @onready var upgrade_menu = $Node2D
 @onready var enemies = $enemies
 @onready var wave_display =$"../CharacterBody2D/Label2"
+
 @onready var red_basic_timer =$RedBasicTimer
 @onready var red_projectile_timer =$RedprojectileTimer
 @onready var red_charger_timer =$RedchargerTimer
@@ -12,12 +13,17 @@ extends Node2D
 @onready var red_projectile_elite_timer =$RedprojectileEliteTimer
 @onready var red_hybrid_grunt_timer =$RedhybridgruntTimer
 @onready var red_projectile_grunt_timer =$RedprojectilegruntTimer
+
+@onready var yellow_basic_timer = $YellowBasicTimer
+
 @onready var shop_window1 = $Node2D/shop_window/TextureButton
 @onready var shop_window2 = $Node2D/shop_window2/TextureButton2
 @onready var shop_window3 = $Node2D/shop_window3/TextureButton3
+
 @onready var shop_icon1 =$Node2D/shop_window/Sprite2D
 @onready var shop_icon2 =$Node2D/shop_window2/Sprite2D
 @onready var shop_icon3 =$Node2D/shop_window3/Sprite2D
+
 @onready var shop_label1 = $Node2D/shop_window/Label
 @onready var shop_label2 = $Node2D/shop_window2/Label2
 @onready var shop_label3 = $Node2D/shop_window3/Label3
@@ -32,11 +38,15 @@ var red_elite_basic_spawn_cooldown = 4.0
 var red_elite_projectile_spawn_cooldown = 5.0
 var red_hybrid_grunt_spawn_cooldown = 5.0
 var red_projectile_grunt_spawn_cooldown = 4
+
+var yellow_basic_spawn_cooldown = 1.0
+
 var current_wave = 1
 var rand_enemy
 
 var dumbell_times_bought = 1
 var sharpshooter_times_bought = 1
+var danis_milk_times_bought = 1
 
 var red_basic = preload("res://scenes/enemies/red/red_basic_enemy.tscn")
 var red_basic_projectile = preload("res://scenes/enemies/red/red_projectile_enemy.tscn")
@@ -46,8 +56,11 @@ var red_elite_projectile = preload("res://scenes/enemies/red/red_elite_projectil
 var red_hybrid_grunt = preload("res://scenes/enemies/red/red_hybrid.tscn")
 var red_projectile_grunt = preload("res://scenes/enemies/red/red_projectile_grunt.tscn")
 
+var yellow_basic = preload("res://resources/yellow_basic.tscn")
+
 var dumbell = preload("res://resources/Dumbell.tscn")
 var sharp_shooter = preload("res://resources/sharp_shooter.tscn")
+var danis_milk = preload("res://resources/dani's_milk.tscn")
 var shop1_item
 var shop2_item
 var shop3_item
@@ -57,13 +70,13 @@ var shop3_cost
 var reroll_cost = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_start_wave(1)
+	current_wave = 1
+	_start_wave(current_wave)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if current_wave == 5:
-		pass
+
 	wave_display.text = str(current_wave)
 	$Node2D.global_position = Global.Player.global_position
 	reroll_label.text = "Reroll: " + str(reroll_cost)
@@ -77,6 +90,9 @@ func _on_wave_timer_timeout() -> void:
 
 
 func _start_wave(wave: int):
+	if current_wave == 11:
+		if get_parent().colour == "red":
+			get_tree().change_scene_to_file("res://scenes/classes/yellow.tscn")
 	if current_wave != 0 and current_wave != 1:
 		Global.Player.current_health = Global.Player.max_health
 	if get_parent().colour == "red":
@@ -97,6 +113,10 @@ func _start_wave(wave: int):
 		red_projectile_grunt_timer.start(red_projectile_grunt_spawn_cooldown)
 		if current_wave < 4:
 			red_projectile_grunt_timer.stop()
+
+
+	elif get_parent().colour == "yellow":
+		yellow_basic_timer.start(yellow_basic_spawn_cooldown)
 	_wave_timer.start(wave_length)
 	$Node2D.hide()
 	if shop_icon1.get_child(0) != null:
@@ -177,6 +197,8 @@ func _on_texture_button_2_button_up() -> void:
 			dumbell_times_bought +=1
 		if shop2_item == sharp_shooter:
 			sharpshooter_times_bought +=1
+		if shop3_item == danis_milk:
+			danis_milk_times_bought +=1
 func _on_red_basic_timer_timeout() -> void:
 	_spawn_enemy(red_basic)
 	red_basic_timer.start(1)
@@ -202,37 +224,51 @@ func _open_shop():
 		shop_icon1.get_child(0).queue_free()
 		shop_icon2.get_child(0).queue_free()
 		shop_icon3.get_child(0).queue_free()
-	var rand_upgrade1 = randi_range(1,2)
+	var rand_upgrade1 = randi_range(1,3)
 	if rand_upgrade1 == 1:
 		shop_icon1.add_child(dumbell.instantiate())
 		shop1_item = dumbell
 		shop1_cost = 20
-		shop1_cost *= (dumbell_times_bought * 0.3)
+		shop1_cost *= (dumbell_times_bought * 0.5)
 		round(shop1_cost)
 		shop_label1.text = str(shop1_cost)
 	if rand_upgrade1 == 2:
 		shop_icon1.add_child(sharp_shooter.instantiate())
 		shop1_item = sharp_shooter
 		shop1_cost = 20
-		shop1_cost *= (sharpshooter_times_bought * 0.3)
+		shop1_cost *= (sharpshooter_times_bought * 0.5)
 		round(shop1_cost)
 		shop_label1.text = str(shop1_cost)
-	var rand_upgrade2 = randi_range(1,2)
+	if rand_upgrade1 == 3:
+		shop_icon1.add_child(danis_milk.instantiate())
+		shop1_item = danis_milk
+		shop1_cost = 20
+		shop1_cost *= (danis_milk_times_bought * 0.5)
+		roundf(shop1_cost)
+		shop_label1.text = str(shop1_cost)
+	var rand_upgrade2 = randi_range(1,3)
 	if rand_upgrade2 == 1:
 		shop_icon2.add_child(dumbell.instantiate())
 		shop2_item = dumbell
 		shop2_cost = 20
-		shop2_cost *= (dumbell_times_bought * 0.3)
+		shop2_cost *= (dumbell_times_bought * 0.5)
 		round(shop2_cost)
 		shop_label2.text = str(shop2_cost)
 	if rand_upgrade2 == 2:
 		shop_icon2.add_child(sharp_shooter.instantiate())
 		shop2_item = sharp_shooter
-		shop2_cost = 20
-		shop2_cost *= (sharpshooter_times_bought * 0.3)
+		shop2_cost = 15
+		shop2_cost *= (sharpshooter_times_bought * 0.5)
 		round(shop2_cost)
 		shop_label2.text = str(shop2_cost)
-	var rand_upgrade3 = randi_range(1,2)
+	if rand_upgrade2 == 3:
+		shop_icon2.add_child(danis_milk.instantiate())
+		shop2_item = danis_milk
+		shop2_cost = 15
+		shop2_cost *= (danis_milk_times_bought * 0.5)
+		roundf(shop2_cost)
+		shop_label2.text = str(shop2_cost)
+	var rand_upgrade3 = randi_range(1,3)
 	if rand_upgrade3 == 1:
 		shop_icon3.add_child(dumbell.instantiate())
 		shop3_item = dumbell
@@ -247,6 +283,13 @@ func _open_shop():
 		shop3_cost *= (sharpshooter_times_bought * 0.3)
 		round(shop3_cost)
 		shop_label3.text = str(shop3_cost)
+	if rand_upgrade3 == 3:
+		shop_icon3.add_child(danis_milk.instantiate())
+		shop3_item = danis_milk
+		shop3_cost = 15
+		shop3_cost *= (danis_milk_times_bought * 0.5)
+		roundf(shop3_cost)
+		shop_label3.text = str(shop3_cost)
 
 
 func _on_texture_button_button_up() -> void:
@@ -255,8 +298,10 @@ func _on_texture_button_button_up() -> void:
 		Global.Player.money -= shop1_cost
 		if shop1_item == dumbell:
 			dumbell_times_bought +=1
-		if shop2_item == sharp_shooter:
+		if shop1_item == sharp_shooter:
 			sharpshooter_times_bought +=1
+		if shop2_item == danis_milk:
+			danis_milk_times_bought +=1
 func _on_texture_button_3_button_up() -> void:
 	if Global.Player.money >= shop3_cost:
 		Global.Player._upgrades.add_child(shop3_item.instantiate())
@@ -265,6 +310,8 @@ func _on_texture_button_3_button_up() -> void:
 			dumbell_times_bought +=1
 		if shop3_item == sharp_shooter:
 			sharpshooter_times_bought +=1
+		if shop3_item == danis_milk:
+			danis_milk_times_bought +=1
 
 func _on_texture_button_5_button_up() -> void:
 	_start_wave(current_wave + 1)
@@ -285,3 +332,8 @@ func _on_redhybridgrunt_timer_timeout() -> void:
 func _on_redprojectilegrunt_timer_timeout() -> void:
 	_spawn_enemy(red_projectile_grunt)
 	red_projectile_grunt_timer.start(4)
+
+
+func _on_yellow_basic_timer_timeout() -> void:
+	_spawn_enemy(yellow_basic)
+	yellow_basic_timer.start(1)

@@ -8,6 +8,8 @@ radius = 2.0
 
 [node name="Area2D" type="Area2D" unique_id=509185912 groups=["Pickup"]]
 z_index = 2
+collision_layer = 32768
+collision_mask = 32768
 script = ExtResource("1_i64fm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1317279401]

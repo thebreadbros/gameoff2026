@@ -201,7 +201,7 @@ radius = 102.122475
 [sub_resource type="CircleShape2D" id="CircleShape2D_he54w"]
 radius = 206.08736
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1098019322 groups=["enemy"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1098019322 groups=["enemy", "enemy_hitbox"]]
 collision_layer = 18
 collision_mask = 0
 script = ExtResource("1_he54w")
@@ -220,7 +220,7 @@ one_shot = true
 one_shot = true
 ignore_time_scale = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1579216287 groups=["enemy"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=1579216287 groups=["enemy", "enemy_hitbox"]]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1141236835]
@@ -239,7 +239,7 @@ one_shot = true
 
 [node name="knockback_timer" type="Timer" parent="." unique_id=1777731570]
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=1898293794 groups=["enemy"]]
+[node name="Area2D2" type="Area2D" parent="." unique_id=1898293794]
 visible = false
 position = Vector2(1, 8)
 collision_layer = 4
@@ -251,7 +251,7 @@ shape = SubResource("CircleShape2D_wsdip")
 
 [node name="special_attack_cooldown_timer" type="Timer" parent="." unique_id=892072454]
 
-[node name="Area2D3" type="Area2D" parent="." unique_id=1334179355 groups=["enemy"]]
+[node name="Area2D3" type="Area2D" parent="." unique_id=1334179355]
 visible = false
 collision_layer = 4
 collision_mask = 4

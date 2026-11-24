@@ -37,7 +37,7 @@ texture = ExtResource("1_hebyl")
 3:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_q6epr"]
-physics_layer_0/collision_layer = 255
+physics_layer_0/collision_layer = 65535
 physics_layer_0/collision_mask = 255
 sources/0 = SubResource("TileSetAtlasSource_2lpwq")
 
@@ -218,6 +218,8 @@ text = "Play"
 wait_time = 7.0
 
 [node name="RedprojectilegruntTimer" type="Timer" parent="enemy_spawn" unique_id=1006893984]
+
+[node name="YellowBasicTimer" type="Timer" parent="enemy_spawn" unique_id=985378786]
 
 [connection signal="timeout" from="enemy_spawn/Timer" to="enemy_spawn" method="_on_timer_timeout"]
 [connection signal="button_up" from="enemy_spawn/Node2D/shop_window/TextureButton" to="enemy_spawn" method="_on_texture_button_button_up"]

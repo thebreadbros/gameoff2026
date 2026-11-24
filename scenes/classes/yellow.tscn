@@ -69,6 +69,12 @@ colour = "yellow"
 
 [node name="CharacterBody2D" parent="." unique_id=1893463468 instance=ExtResource("2_ig1j1")]
 
+[node name="Label2" type="Label" parent="CharacterBody2D" unique_id=1139017400]
+offset_left = -203.0
+offset_top = -81.0
+offset_right = -163.0
+offset_bottom = -58.0
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=513394470]
 tile_map_data = PackedByteArray("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AAAGAOT/AAAAAAIAAAAFAOT/AAAAAAIAAAAEAOT/AAAAAAIAAAADAOT/AAAAAAIAAAACAOT/AAAAAAIAAAABAOT/AAAAAAIAAAAAAOT/AAAAAAIAAAD//+T/AAAAAAIAAAD+/+T/AAAAAAIAAAD9/+T/AAAAAAIAAAD8/+T/AAAAAAIAAAD7/+T/AAAAAAIAAAD6/+T/AAAAAAIAAAD5/+T/AAAAAAIAAAD4/+T/AAAAAAIAAAD3/+T/AAAAAAIAAAD2/+T/AAAAAAIAAAD1/+T/AAAAAAIAAAD0/+T/AAAAAAIAAADz/+T/AAAAAAIAAADy/+T/AAAAAAIAAADx/+T/AAAAAAIAAADw/+T/AAAAAAIAAADv/+T/AAAAAAIAAADu/+T/AAAAAAIAAADt/+T/AAAAAAIAAADs/+T/AAAAAAIAAADr/+T/AAAAAAIAAADq/+T/AAAAAAIAAADp/+T/AAAAAAIAAADo/+T/AAAAAAIAAADn/+T/AAAAAAIAAADm/+T/AAAAAAIAAADl/+T/AAAAAAIAAADk/+T/AAAAAAIAAADj/+T/AAAAAAIAAADi/+T/AAAAAAIAAADh/+T/AAAAAAIAAADg/+T/AAAAAAIAAADf/+T/AAAAAAIAAADe/+T/AAAAAAIAAADd/+T/AAAAAAIAAADc/+T/AAAAAAIAAADb/+T/AAAAAAIAAADa/+X/AAABAAIAAADa/+b/AAABAAIAAADa/+f/AAABAAIAAADa/+j/AAABAAIAAADa/+n/AAABAAIAAADa/+r/AAABAAIAAADa/+v/AAABAAIAAADa/+z/AAABAAIAAADa/+3/AAABAAIAAADa/+7/AAABAAIAAADa/+//AAABAAIAAADa//D/AAABAAIAAADa//H/AAABAAIAAADa//L/AAABAAIAAADa//P/AAABAAIAAADa//T/AAABAAIAAADa//X/AAABAAIAAADa//b/AAABAAIAAADa//f/AAABAAIAAADa//j/AAABAAIAAADa//n/AAABAAIAAADa//r/AAABAAIAAADa//v/AAABAAIAAADa//z/AAABAAIAAADa//3/AAABAAIAAADa//7/AAABAAIAAADa////AAABAAIAAADa/wAAAAABAAIAAADa/wEAAAABAAIAAADa/wIAAAABAAIAAADa/wMAAAABAAIAAADa/wQAAAABAAIAAADa/wUAAAABAAIAAADb/yYAAAAAAAMAAADc/yYAAAAAAAMAAADd/yYAAAAAAAMAAADe/yYAAAAAAAMAAADf/yYAAAAAAAMAAADg/yYAAAAAAAMAAADh/yYAAAAAAAMAAADi/yYAAAAAAAMAAADj/yYAAAAAAAMAAADk/yYAAAAAAAMAAADl/yYAAAAAAAMAAADa/+T/AAAAAAAAAAAhAOT/AAABAAAAAAAhACYAAAABAAEAAADa/yUAAAABAAIAAADa/yQAAAABAAIAAADa/yMAAAABAAIAAADa/yIAAAABAAIAAADa/yEAAAABAAIAAADa/yAAAAABAAIAAADa/x8AAAABAAIAAADa/x4AAAABAAIAAADa/x0AAAABAAIAAADa/xwAAAABAAIAAADa/xsAAAABAAIAAADa/xoAAAABAAIAAADa/xkAAAABAAIAAADa/xgAAAABAAIAAADa/xcAAAABAAIAAADa/xYAAAABAAIAAADa/xUAAAABAAIAAADa/xQAAAABAAIAAADa/xMAAAABAAIAAADa/xIAAAABAAIAAADa/xEAAAABAAIAAADa/xAAAAABAAIAAADa/w8AAAABAAIAAADa/w4AAAABAAIAAADa/w0AAAABAAIAAADa/wwAAAABAAIAAADa/wsAAAABAAIAAADa/woAAAABAAIAAADa/wkAAAABAAIAAADa/wgAAAABAAIAAADa/wcAAAABAAIAAADa/wYAAAABAAIAAADa/yYAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_q6epr")
@@ -80,23 +86,23 @@ tile_set = SubResource("TileSet_i7aae")
 
 [node name="crosshair" parent="." unique_id=2035332534 instance=ExtResource("4_iqeof")]
 
-[node name="enemy_spawn" type="Node2D" parent="." unique_id=551829470]
+[node name="enemy_spawn" type="Node2D" parent="." unique_id=1997117133]
 script = ExtResource("5_ub4pu")
 
-[node name="Timer" type="Timer" parent="enemy_spawn" unique_id=875802798]
+[node name="Timer" type="Timer" parent="enemy_spawn" unique_id=434238]
 wait_time = 0.1
 one_shot = true
 autostart = true
 
-[node name="Node2D" type="Node2D" parent="enemy_spawn" unique_id=1551978615]
+[node name="Node2D" type="Node2D" parent="enemy_spawn" unique_id=1040525953]
 clip_children = 1
 
-[node name="shop_window" type="Sprite2D" parent="enemy_spawn/Node2D" unique_id=1023765124]
+[node name="shop_window" type="Sprite2D" parent="enemy_spawn/Node2D" unique_id=2020588434]
 position = Vector2(-61, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_baa2u")
 
-[node name="TextureButton" type="TextureButton" parent="enemy_spawn/Node2D/shop_window" unique_id=999609039]
+[node name="TextureButton" type="TextureButton" parent="enemy_spawn/Node2D/shop_window" unique_id=1021979979]
 z_index = 2
 offset_left = -44.0
 offset_top = 72.0
@@ -105,58 +111,80 @@ offset_bottom = 102.0
 texture_normal = ExtResource("7_t46p5")
 stretch_mode = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="enemy_spawn/Node2D/shop_window" unique_id=215689319]
+[node name="Sprite2D" type="Sprite2D" parent="enemy_spawn/Node2D/shop_window" unique_id=403204113]
 
-[node name="shop_window2" type="Sprite2D" parent="enemy_spawn/Node2D" unique_id=1828265893]
-position = Vector2(13, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_baa2u")
-
-[node name="TextureButton2" type="TextureButton" parent="enemy_spawn/Node2D/shop_window2" unique_id=2064808726]
+[node name="Label" type="Label" parent="enemy_spawn/Node2D/shop_window" unique_id=374807343]
 z_index = 2
-offset_left = -44.0
-offset_top = 72.0
-offset_right = 40.0
-offset_bottom = 102.0
-texture_normal = ExtResource("7_t46p5")
-stretch_mode = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="enemy_spawn/Node2D/shop_window2" unique_id=1549440800]
-
-[node name="shop_window3" type="Sprite2D" parent="enemy_spawn/Node2D" unique_id=1038877443]
-position = Vector2(87, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_baa2u")
-
-[node name="TextureButton3" type="TextureButton" parent="enemy_spawn/Node2D/shop_window3" unique_id=213788337]
-z_index = 2
-offset_left = -44.0
-offset_top = 72.0
-offset_right = 40.0
-offset_bottom = 102.0
-texture_normal = ExtResource("7_t46p5")
-stretch_mode = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="enemy_spawn/Node2D/shop_window3" unique_id=1100017693]
-
-[node name="TextureButton4" type="TextureButton" parent="enemy_spawn/Node2D" unique_id=1322555720]
-z_index = 2
-offset_left = -14.0
-offset_top = -88.0
+offset_left = -42.0
+offset_top = 74.0
 offset_right = 36.0
+offset_bottom = 97.0
+text = "sa"
+
+[node name="shop_window2" type="Sprite2D" parent="enemy_spawn/Node2D" unique_id=2031931302]
+position = Vector2(92, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_baa2u")
+
+[node name="TextureButton2" type="TextureButton" parent="enemy_spawn/Node2D/shop_window2" unique_id=175982469]
+z_index = 2
+offset_left = -44.0
+offset_top = 72.0
+offset_right = 40.0
+offset_bottom = 102.0
+texture_normal = ExtResource("7_t46p5")
+stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy_spawn/Node2D/shop_window2" unique_id=1568822940]
+
+[node name="Label2" type="Label" parent="enemy_spawn/Node2D/shop_window2" unique_id=410372290]
+z_index = 2
+offset_left = -42.0
+offset_top = 74.0
+offset_right = 36.0
+offset_bottom = 97.0
+
+[node name="shop_window3" type="Sprite2D" parent="enemy_spawn/Node2D" unique_id=1012547555]
+position = Vector2(15, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_baa2u")
+
+[node name="TextureButton3" type="TextureButton" parent="enemy_spawn/Node2D/shop_window3" unique_id=646663223]
+z_index = 2
+offset_left = -44.0
+offset_top = 72.0
+offset_right = 40.0
+offset_bottom = 102.0
+texture_normal = ExtResource("7_t46p5")
+stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy_spawn/Node2D/shop_window3" unique_id=298193119]
+
+[node name="Label3" type="Label" parent="enemy_spawn/Node2D/shop_window3" unique_id=1826298506]
+z_index = 2
+offset_left = -42.0
+offset_top = 74.0
+offset_right = 36.0
+offset_bottom = 97.0
+
+[node name="TextureButton4" type="TextureButton" parent="enemy_spawn/Node2D" unique_id=1084144731]
+z_index = 2
+offset_left = -31.0
+offset_top = -88.0
+offset_right = 60.0
 offset_bottom = -65.0
 texture_normal = ExtResource("7_t46p5")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="enemy_spawn/Node2D/TextureButton4" unique_id=330697843]
+[node name="Label" type="Label" parent="enemy_spawn/Node2D/TextureButton4" unique_id=1797591070]
 layout_mode = 0
 offset_left = 2.0
 offset_top = -1.0
 offset_right = 48.0
 offset_bottom = 22.0
-text = "Reroll"
+text = "Reroll:1"
 
-[node name="TextureButton5" type="TextureButton" parent="enemy_spawn/Node2D" unique_id=808222041]
+[node name="TextureButton5" type="TextureButton" parent="enemy_spawn/Node2D" unique_id=1987488351]
 offset_left = -4.0
 offset_top = 69.0
 offset_right = 35.0
@@ -164,39 +192,45 @@ offset_bottom = 92.0
 texture_normal = ExtResource("7_t46p5")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="enemy_spawn/Node2D/TextureButton5" unique_id=1895365033]
+[node name="Label" type="Label" parent="enemy_spawn/Node2D/TextureButton5" unique_id=413735582]
 layout_mode = 0
 offset_left = 3.0
 offset_right = 36.0
 offset_bottom = 23.0
 text = "Play"
 
-[node name="wave_timer" type="Timer" parent="enemy_spawn" unique_id=1501414354]
+[node name="wave_timer" type="Timer" parent="enemy_spawn" unique_id=398032613]
 
 [node name="enemies" parent="enemy_spawn" unique_id=1636411430 instance=ExtResource("8_kwlyi")]
 
-[node name="Label" type="Label" parent="enemy_spawn" unique_id=886560120]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="RedBasicTimer" type="Timer" parent="enemy_spawn" unique_id=501057708]
 
-[node name="YellowBasicTimer" type="Timer" parent="enemy_spawn" unique_id=216728735]
+[node name="RedprojectileTimer" type="Timer" parent="enemy_spawn" unique_id=1330456302]
 
-[node name="RedprojectileTimer" type="Timer" parent="enemy_spawn" unique_id=373472535]
+[node name="RedchargerTimer" type="Timer" parent="enemy_spawn" unique_id=1582603970]
 
-[node name="RedchargerTimer" type="Timer" parent="enemy_spawn" unique_id=1665651595]
+[node name="RedBasicEliteTimer" type="Timer" parent="enemy_spawn" unique_id=22842158]
 
-[node name="RedBasicEliteTimer" type="Timer" parent="enemy_spawn" unique_id=1881457978]
+[node name="RedprojectileEliteTimer" type="Timer" parent="enemy_spawn" unique_id=990602874]
 
-[node name="RedprojectileEliteTimer" type="Timer" parent="enemy_spawn" unique_id=14308437]
+[node name="RedhybridgruntTimer" type="Timer" parent="enemy_spawn" unique_id=1940049157]
+wait_time = 7.0
+
+[node name="RedprojectilegruntTimer" type="Timer" parent="enemy_spawn" unique_id=1505369606]
+
+[node name="YellowBasicTimer" type="Timer" parent="enemy_spawn" unique_id=1228964898]
 
 [connection signal="timeout" from="enemy_spawn/Timer" to="enemy_spawn" method="_on_timer_timeout"]
 [connection signal="button_up" from="enemy_spawn/Node2D/shop_window/TextureButton" to="enemy_spawn" method="_on_texture_button_button_up"]
 [connection signal="button_up" from="enemy_spawn/Node2D/shop_window2/TextureButton2" to="enemy_spawn" method="_on_texture_button_2_button_up"]
 [connection signal="button_up" from="enemy_spawn/Node2D/shop_window3/TextureButton3" to="enemy_spawn" method="_on_texture_button_3_button_up"]
+[connection signal="button_up" from="enemy_spawn/Node2D/TextureButton4" to="enemy_spawn" method="_on_texture_button_4_button_up"]
 [connection signal="button_up" from="enemy_spawn/Node2D/TextureButton5" to="enemy_spawn" method="_on_texture_button_5_button_up"]
 [connection signal="timeout" from="enemy_spawn/wave_timer" to="enemy_spawn" method="_on_wave_timer_timeout"]
-[connection signal="timeout" from="enemy_spawn/YellowBasicTimer" to="enemy_spawn" method="_on_red_basic_timer_timeout"]
+[connection signal="timeout" from="enemy_spawn/RedBasicTimer" to="enemy_spawn" method="_on_red_basic_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn/RedprojectileTimer" to="enemy_spawn" method="_on_redprojectile_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn/RedchargerTimer" to="enemy_spawn" method="_on_redcharger_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn/RedBasicEliteTimer" to="enemy_spawn" method="_on_red_basic_elite_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn/RedprojectileEliteTimer" to="enemy_spawn" method="_on_redprojectile_elite_timer_timeout"]
+[connection signal="timeout" from="enemy_spawn/RedhybridgruntTimer" to="enemy_spawn" method="_on_redhybridgrunt_timer_timeout"]
+[connection signal="timeout" from="enemy_spawn/RedprojectilegruntTimer" to="enemy_spawn" method="_on_redprojectilegrunt_timer_timeout"]

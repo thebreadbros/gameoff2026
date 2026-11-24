@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dxs66y8t8ky36" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c4j0iyg1wo5u1" path="res://assets/hand.png" id="3_hqtel"]
 [ext_resource type="Script" uid="uid://dt3diuvuunfc5" path="res://scripts/weapon.gd" id="3_sweqy"]
-[ext_resource type="Texture2D" uid="uid://dy2ulpaymnn6l" path="res://assets/pistol.png" id="4_sweqy"]
+[ext_resource type="Texture2D" uid="uid://do0tppldwu4rg" path="res://assets/game_jam_sword_placeholder.png" id="6_smehm"]
 [ext_resource type="Texture2D" uid="uid://e3gblwht7f1i" path="res://assets/health_bar.png" id="7_fjrip"]
 [ext_resource type="AudioStream" uid="uid://yjqb8k5uhyod" path="res://sfx/Combat and Gore/kick.wav" id="7_smehm"]
 [ext_resource type="AudioStream" uid="uid://pg04txvp7hj0" path="res://sfx/Snake's SECOND Authentic Gun Sounds/Isolated/9mm/WAV/9mm Single Isolated.wav" id="7_ur7pv"]
@@ -54,10 +54,89 @@ _data = {
 radius = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
-radius = 2.0
+radius = 9.0
 
 [sub_resource type="Animation" id="Animation_d2wvv"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jej6c"]
+resource_name = "melee_attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 3.141592653589793, 3.141592653589793, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_smehm"]
+resource_name = "melee_attack_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -3.141592653589793, -3.141592653589793, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_3v2ag"]
 resource_name = "shoot"
@@ -67,6 +146,8 @@ loop_mode = 2
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jej6c"]
 _data = {
 &"RESET": SubResource("Animation_d2wvv"),
+&"melee_attack": SubResource("Animation_jej6c"),
+&"melee_attack_right": SubResource("Animation_smehm"),
 &"shoot": SubResource("Animation_3v2ag")
 }
 
@@ -74,11 +155,11 @@ _data = {
 radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_smehm"]
-radius = 14.56022
+radius = 27.018513
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1893463468 groups=["player"]]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 32773
+collision_mask = 32773
 script = ExtResource("1_onrkg")
 max_health = 15.0
 
@@ -94,6 +175,7 @@ libraries/ = SubResource("AnimationLibrary_d2wvv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1390878277]
 zoom = Vector2(6, 6)
+rotation_smoothing_enabled = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D" unique_id=851828706]
 offset_left = -204.0
@@ -125,24 +207,26 @@ disabled = true
 texture = ExtResource("3_hqtel")
 
 [node name="Area2D" type="Area2D" parent="pivot/CharacterBody2D" unique_id=1568023901 groups=["player"]]
-position = Vector2(10, 0)
+position = Vector2(4.5474735e-13, 0)
 scale = Vector2(4, 4)
 script = ExtResource("3_sweqy")
 
 [node name="Marker2D" type="Marker2D" parent="pivot/CharacterBody2D/Area2D" unique_id=1224129158]
-position = Vector2(5, -1.5)
 scale = Vector2(0.25, 0.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/CharacterBody2D/Area2D" unique_id=1259365196]
-position = Vector2(-2, -3)
+position = Vector2(1.1920929e-07, -13)
 shape = SubResource("CircleShape2D_1jxqw")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="pivot/CharacterBody2D/Area2D" unique_id=660893303]
-texture = ExtResource("4_sweqy")
+position = Vector2(0, 4.172325e-07)
+texture = ExtResource("6_smehm")
+offset = Vector2(0, -8)
 flip_h = true
 
 [node name="Marker2D2" type="Marker2D" parent="pivot/CharacterBody2D/Area2D" unique_id=183176530]
-position = Vector2(-2.5, 0)
+position = Vector2(0, -4.0233135e-07)
 
 [node name="RayCast2D" type="RayCast2D" parent="pivot/CharacterBody2D/Area2D" unique_id=1324292916]
 position = Vector2(-12.5, 0)
@@ -177,6 +261,9 @@ volume_db = -18.655
 autoplay = true
 
 [node name="PickupRange" type="Area2D" parent="." unique_id=970122570 groups=["player"]]
+visible = false
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRange" unique_id=103712506]
 position = Vector2(0, 9)
@@ -188,6 +275,7 @@ offset_top = -81.0
 offset_right = -104.0
 offset_bottom = -58.0
 
+[connection signal="area_entered" from="pivot/CharacterBody2D/Area2D" to="pivot/CharacterBody2D/Area2D" method="_on_area_entered"]
 [connection signal="timeout" from="pivot/CharacterBody2D/Area2D/attack_cooldown_timer" to="pivot/CharacterBody2D/Area2D" method="_on_attack_cooldown_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

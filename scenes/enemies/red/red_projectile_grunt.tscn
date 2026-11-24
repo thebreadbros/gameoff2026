@@ -202,7 +202,7 @@ radius = 102.122475
 [sub_resource type="CircleShape2D" id="CircleShape2D_he54w"]
 radius = 206.08736
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1098019322 groups=["enemy"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1098019322 groups=["enemy", "enemy_hitbox"]]
 collision_layer = 130
 collision_mask = 0
 script = ExtResource("1_lvbun")
@@ -221,11 +221,9 @@ one_shot = true
 one_shot = true
 ignore_time_scale = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1579216287 groups=["enemy"]]
-visible = false
+[node name="Area2D" type="Area2D" parent="." unique_id=1579216287 groups=["enemy", "enemy_hitbox"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1141236835]
-position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_238jt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1522368158 groups=["enemy"]]

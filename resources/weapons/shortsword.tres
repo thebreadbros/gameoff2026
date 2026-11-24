@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="weapon_resource" format=3 uid="uid://delu8ht2748gw"]
+
+[ext_resource type="Texture2D" uid="uid://do0tppldwu4rg" path="res://assets/game_jam_sword_placeholder.png" id="1_2rccq"]
+[ext_resource type="Script" uid="uid://y8kexpxbwy2i" path="res://scripts/weapon_resource.gd" id="1_qyqlh"]
+
+[resource]
+script = ExtResource("1_qyqlh")
+weapon_name = "Short Sword"
+_texture = ExtResource("1_2rccq")
+damage = 25
+cooldown = 0.3
+weapon_type = 1
+subclass = 4
+metadata/_custom_type_script = "uid://y8kexpxbwy2i"

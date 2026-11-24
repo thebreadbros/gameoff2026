@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbj8k4frsfb1o" path="res://scenes/enemies/red/enemy_base.gd" id="1_eu3tu"]
 [ext_resource type="Resource" uid="uid://1ffiowlmbfvb" path="res://resources/Red_basic.tres" id="2_tlqmc"]
-[ext_resource type="Texture2D" uid="uid://bayh0gxu1sbmg" path="res://assets/game_jam_yellow_basic_enemy.png" id="3_x0rjn"]
+[ext_resource type="Texture2D" uid="uid://bayh0gxu1sbmg" path="res://assets/enemies/yellow/game_jam_yellow_basic_enemy.png" id="3_x0rjn"]
 
 [sub_resource type="Animation" id="Animation_mw4ug"]
 length = 0.001

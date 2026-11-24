@@ -7,6 +7,6 @@
 script = ExtResource("1_2las4")
 max_health = 10
 speed = 100.0
-dash_speed = 125.0
+dash_speed = 150.0
 starting_weapon = ExtResource("2_oi51d")
 metadata/_custom_type_script = "uid://d2i2gup17i0kk"

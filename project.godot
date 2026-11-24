@@ -29,6 +29,7 @@ player=""
 enemy=""
 EnemyProjectile=""
 Pickup=""
+enemy_hitbox=""
 
 [input]
 

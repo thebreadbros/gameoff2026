@@ -63,7 +63,7 @@ func _physics_process(_delta):
 	if !is_dashing or is_being_knocked_back:
 		direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 		velocity = direction * speed
-	$pivot.look_at(get_global_mouse_position())
+	$pivot.look_at(weapon.target_pos)
 	#weapon.global_position = $Area2D/Marker2D2.global_position
 	#weapon.global_position= $Area2D/Marker2D2.global_position
 	#weapon.get_global_mouse_position().normalized()
@@ -74,17 +74,30 @@ func _physics_process(_delta):
 	if is_dashing:
 		if velocity == Vector2.ZERO:
 			is_dashing = false
-	if weapon.global_position < global_position:
-		_weapon_sprite.flip_v = true
+	if weapon.weapon_type == weapon.WEAPONTYPE.ranged:
+		if weapon.global_position < global_position:
+			_weapon_sprite.flip_v = true
+			weapon.h_dir = "left"
+		else:
+			_weapon_sprite.flip_v = false
+			weapon.h_dir = "right"
 	else:
-		_weapon_sprite.flip_v = false
+		if weapon.global_position < global_position:
+			_weapon_sprite.flip_v = true
+			_weapon_sprite.offset.y *= 1
+			weapon.h_dir = "left"
+		else:
+			weapon.h_dir = "right"
+			_weapon_sprite.flip_v = false
+			_weapon_sprite.offset.y = abs(_weapon_sprite.offset.y)
 	if Input.is_action_just_pressed("dash") and is_dashing == false and can_dash == true:
 		is_dashing = true
 		if velocity != Vector2.ZERO:
 			velocity = direction * dash_speed
 			can_dash = false
 			dash_timer.start(0.5)
-			$CollisionShape2D.disabled = true
+			set_collision_layer_value(1,false)
+			set_collision_mask_value(1,false)
 			dash_cooldown_timer.start(1.5)
 	if current_health <= 0:
 		get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
@@ -93,8 +106,8 @@ func _physics_process(_delta):
 
 func _on_timer_timeout() -> void:
 	is_dashing = false
-	$CollisionShape2D.disabled = false
-
+	set_collision_layer_value(1,true)
+	set_collision_mask_value(1,true)
 
 func _on_timer_2_timeout() -> void:
 	can_dash = true

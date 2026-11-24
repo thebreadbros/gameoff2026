@@ -7,7 +7,7 @@
 script = ExtResource("1_ypr6b")
 texture = ExtResource("2_a2q24")
 damage_buff = 3
-speed_buff = -5.0
+speed_buff = -3.0
 projectile_speed_buff = 50.0
 cost = 20
 metadata/_custom_type_script = "uid://20drklt0scs0"
