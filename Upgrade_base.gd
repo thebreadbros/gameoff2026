@@ -23,7 +23,7 @@ func _enter_tree()-> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	round(cost)
 
 
 func _is_relic():

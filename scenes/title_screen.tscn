@@ -29,6 +29,25 @@ offset_bottom = 98.0
 text = "Play"
 label_settings = SubResource("LabelSettings_3yumr")
 
+[node name="Button2" type="TextureButton" parent="." unique_id=1547167971]
+offset_left = -507.0
+offset_top = 175.0
+offset_right = -187.0
+offset_bottom = 295.0
+texture_normal = ExtResource("2_mgrm8")
+texture_pressed = ExtResource("3_dc4i4")
+texture_hover = ExtResource("4_e54dn")
+
+[node name="Label" type="Label" parent="Button2" unique_id=1524478959]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 20.0
+offset_right = 211.0
+offset_bottom = 98.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_3yumr")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=19129669]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]

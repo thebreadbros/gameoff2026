@@ -133,6 +133,7 @@ func _stop_wave():
 	red_elite_basic_spawn_cooldown /= 1.2
 	red_elite_projectile_spawn_cooldown /= 1.2
 	red_hybrid_grunt_spawn_cooldown /= 1.2
+
 	Global.Player.current_health = Global.Player.max_health
 
 	red_basic_timer.stop()

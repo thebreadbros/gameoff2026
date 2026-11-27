@@ -4,10 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://dxbseydic05hf" path="res://assets/gamejambackup_tileset_temporary.png" id="1_hebyl"]
 [ext_resource type="PackedScene" uid="uid://cstokxixv74nh" path="res://scenes/player.tscn" id="2_xjvc2"]
 [ext_resource type="PackedScene" uid="uid://bsgn8aghv8f3v" path="res://assets/area_2d.tscn" id="3_kdexi"]
+[ext_resource type="Texture2D" uid="uid://owi3vh7eo03s" path="res://assets/ui/button wide idle.png" id="4_txx1c"]
+[ext_resource type="Texture2D" uid="uid://b6mec2pt0buhg" path="res://assets/ui/button wide clicked.png" id="5_32ip1"]
+[ext_resource type="Texture2D" uid="uid://cmipiwqwor0v0" path="res://assets/ui/button wide hover.png" id="6_m4k37"]
+[ext_resource type="Texture2D" uid="uid://6gngd24pn32d" path="res://assets/ui/button square idle.png" id="7_p25kx"]
 [ext_resource type="PackedScene" uid="uid://ctc7h2hw4gfeg" path="res://scenes/enemies.tscn" id="8_mous1"]
+[ext_resource type="Script" uid="uid://cbe6d6ocm0jj7" path="res://scenes/pause_menu.gd" id="9_acu7c"]
 [ext_resource type="Script" uid="uid://dlklafbxhxnyy" path="res://scenes/enemy_spawner.gd" id="9_mous1"]
 [ext_resource type="Texture2D" uid="uid://blxw5acwqpf1a" path="res://assets/upgrade_ui_place_holder.png" id="10_5ktt4"]
 [ext_resource type="Texture2D" uid="uid://b852binqqjeb7" path="res://assets/upgrade_ui_button_place_holder.png" id="11_6rsqc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ktt4"]
+font_size = 75
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2lpwq"]
 texture = ExtResource("1_hebyl")
@@ -76,6 +84,50 @@ offset_top = -81.0
 offset_right = -163.0
 offset_bottom = -58.0
 
+[node name="menu" type="Node2D" parent="CharacterBody2D" unique_id=810572707]
+z_index = 4
+scale = Vector2(0.1, 0.1)
+script = ExtResource("9_acu7c")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/menu" unique_id=598248970]
+position = Vector2(130, -20)
+scale = Vector2(11.416666, 18.583332)
+texture = ExtResource("7_p25kx")
+
+[node name="TextureButton" type="TextureButton" parent="CharacterBody2D/menu" unique_id=1080215857]
+z_index = 5
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("4_txx1c")
+texture_pressed = ExtResource("5_32ip1")
+texture_hover = ExtResource("6_m4k37")
+
+[node name="Label" type="Label" parent="CharacterBody2D/menu/TextureButton" unique_id=1307874854]
+z_index = 9
+layout_mode = 0
+offset_left = 20.0
+offset_right = 339.99997
+offset_bottom = 109.99999
+text = "Resume"
+label_settings = SubResource("LabelSettings_5ktt4")
+
+[node name="TextureButton2" type="TextureButton" parent="CharacterBody2D/menu" unique_id=152461991]
+offset_top = 330.0
+offset_right = 320.0
+offset_bottom = 450.0
+texture_normal = ExtResource("4_txx1c")
+texture_pressed = ExtResource("5_32ip1")
+texture_hover = ExtResource("6_m4k37")
+
+[node name="Label" type="Label" parent="CharacterBody2D/menu/TextureButton2" unique_id=1274736440]
+z_index = 9
+layout_mode = 0
+offset_left = 20.0
+offset_right = 339.99997
+offset_bottom = 109.99999
+text = "Quit"
+label_settings = SubResource("LabelSettings_5ktt4")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=513394470]
 tile_map_data = PackedByteArray("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AAAGAOT/AAAAAAIAAAAFAOT/AAAAAAIAAAAEAOT/AAAAAAIAAAADAOT/AAAAAAIAAAACAOT/AAAAAAIAAAABAOT/AAAAAAIAAAAAAOT/AAAAAAIAAAD//+T/AAAAAAIAAAD+/+T/AAAAAAIAAAD9/+T/AAAAAAIAAAD8/+T/AAAAAAIAAAD7/+T/AAAAAAIAAAD6/+T/AAAAAAIAAAD5/+T/AAAAAAIAAAD4/+T/AAAAAAIAAAD3/+T/AAAAAAIAAAD2/+T/AAAAAAIAAAD1/+T/AAAAAAIAAAD0/+T/AAAAAAIAAADz/+T/AAAAAAIAAADy/+T/AAAAAAIAAADx/+T/AAAAAAIAAADw/+T/AAAAAAIAAADv/+T/AAAAAAIAAADu/+T/AAAAAAIAAADt/+T/AAAAAAIAAADs/+T/AAAAAAIAAADr/+T/AAAAAAIAAADq/+T/AAAAAAIAAADp/+T/AAAAAAIAAADo/+T/AAAAAAIAAADn/+T/AAAAAAIAAADm/+T/AAAAAAIAAADl/+T/AAAAAAIAAADk/+T/AAAAAAIAAADj/+T/AAAAAAIAAADi/+T/AAAAAAIAAADh/+T/AAAAAAIAAADg/+T/AAAAAAIAAADf/+T/AAAAAAIAAADe/+T/AAAAAAIAAADd/+T/AAAAAAIAAADc/+T/AAAAAAIAAADb/+T/AAAAAAIAAADa/+X/AAABAAIAAADa/+b/AAABAAIAAADa/+f/AAABAAIAAADa/+j/AAABAAIAAADa/+n/AAABAAIAAADa/+r/AAABAAIAAADa/+v/AAABAAIAAADa/+z/AAABAAIAAADa/+3/AAABAAIAAADa/+7/AAABAAIAAADa/+//AAABAAIAAADa//D/AAABAAIAAADa//H/AAABAAIAAADa//L/AAABAAIAAADa//P/AAABAAIAAADa//T/AAABAAIAAADa//X/AAABAAIAAADa//b/AAABAAIAAADa//f/AAABAAIAAADa//j/AAABAAIAAADa//n/AAABAAIAAADa//r/AAABAAIAAADa//v/AAABAAIAAADa//z/AAABAAIAAADa//3/AAABAAIAAADa//7/AAABAAIAAADa////AAABAAIAAADa/wAAAAABAAIAAADa/wEAAAABAAIAAADa/wIAAAABAAIAAADa/wMAAAABAAIAAADa/wQAAAABAAIAAADa/wUAAAABAAIAAADb/yYAAAAAAAMAAADc/yYAAAAAAAMAAADd/yYAAAAAAAMAAADe/yYAAAAAAAMAAADf/yYAAAAAAAMAAADg/yYAAAAAAAMAAADh/yYAAAAAAAMAAADi/yYAAAAAAAMAAADj/yYAAAAAAAMAAADk/yYAAAAAAAMAAADl/yYAAAAAAAMAAADa/+T/AAAAAAAAAAAhAOT/AAABAAAAAAAhACYAAAABAAEAAADa/yUAAAABAAIAAADa/yQAAAABAAIAAADa/yMAAAABAAIAAADa/yIAAAABAAIAAADa/yEAAAABAAIAAADa/yAAAAABAAIAAADa/x8AAAABAAIAAADa/x4AAAABAAIAAADa/x0AAAABAAIAAADa/xwAAAABAAIAAADa/xsAAAABAAIAAADa/xoAAAABAAIAAADa/xkAAAABAAIAAADa/xgAAAABAAIAAADa/xcAAAABAAIAAADa/xYAAAABAAIAAADa/xUAAAABAAIAAADa/xQAAAABAAIAAADa/xMAAAABAAIAAADa/xIAAAABAAIAAADa/xEAAAABAAIAAADa/xAAAAABAAIAAADa/w8AAAABAAIAAADa/w4AAAABAAIAAADa/w0AAAABAAIAAADa/wwAAAABAAIAAADa/wsAAAABAAIAAADa/woAAAABAAIAAADa/wkAAAABAAIAAADa/wgAAAABAAIAAADa/wcAAAABAAIAAADa/wYAAAABAAIAAADa/yYAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_q6epr")
@@ -86,6 +138,7 @@ tile_map_data = PackedByteArray("AADw//j/AAACAAAAAADw//n/AAACAAAAAADw//r/AAACAAA
 tile_set = SubResource("TileSet_i7aae")
 
 [node name="crosshair" parent="." unique_id=2035332534 instance=ExtResource("3_kdexi")]
+z_index = 20
 
 [node name="enemy_spawn" type="Node2D" parent="." unique_id=551829470]
 script = ExtResource("9_mous1")
@@ -221,6 +274,8 @@ wait_time = 7.0
 
 [node name="YellowBasicTimer" type="Timer" parent="enemy_spawn" unique_id=985378786]
 
+[connection signal="button_up" from="CharacterBody2D/menu/TextureButton" to="CharacterBody2D/menu" method="_on_texture_button_button_up"]
+[connection signal="button_up" from="CharacterBody2D/menu/TextureButton2" to="CharacterBody2D/menu" method="_on_texture_button_2_button_up"]
 [connection signal="timeout" from="enemy_spawn/Timer" to="enemy_spawn" method="_on_timer_timeout"]
 [connection signal="button_up" from="enemy_spawn/Node2D/shop_window/TextureButton" to="enemy_spawn" method="_on_texture_button_button_up"]
 [connection signal="button_up" from="enemy_spawn/Node2D/shop_window2/TextureButton2" to="enemy_spawn" method="_on_texture_button_2_button_up"]
