@@ -61,6 +61,9 @@ var yellow_basic = preload("res://resources/yellow_basic.tscn")
 var dumbell = preload("res://resources/Dumbell.tscn")
 var sharp_shooter = preload("res://resources/sharp_shooter.tscn")
 var danis_milk = preload("res://resources/dani's_milk.tscn")
+
+var soldout = preload("res://resources/soldout.tscn")
+
 var shop1_item
 var shop2_item
 var shop3_item
@@ -200,6 +203,10 @@ func _on_texture_button_2_button_up() -> void:
 			sharpshooter_times_bought +=1
 		if shop3_item == danis_milk:
 			danis_milk_times_bought +=1
+		shop2_item = soldout.instantiate()
+		shop2_cost = 99999999999999999999
+		shop_icon2.get_child(0).queue_free()
+		shop_icon2.add_child(soldout.instantiate())
 func _on_red_basic_timer_timeout() -> void:
 	_spawn_enemy(red_basic)
 	red_basic_timer.start(1)
@@ -230,44 +237,44 @@ func _open_shop():
 		shop_icon1.add_child(dumbell.instantiate())
 		shop1_item = dumbell
 		shop1_cost = 20
-		shop1_cost *= (dumbell_times_bought * 0.5)
+		shop1_cost *= (dumbell_times_bought * 0.3)
 		round(shop1_cost)
 		shop_label1.text = str(shop1_cost)
 	if rand_upgrade1 == 2:
 		shop_icon1.add_child(sharp_shooter.instantiate())
 		shop1_item = sharp_shooter
-		shop1_cost = 20
-		shop1_cost *= (sharpshooter_times_bought * 0.5)
+		shop1_cost = 15
+		shop1_cost *= (sharpshooter_times_bought * 0.3)
 		round(shop1_cost)
 		shop_label1.text = str(shop1_cost)
 	if rand_upgrade1 == 3:
 		shop_icon1.add_child(danis_milk.instantiate())
 		shop1_item = danis_milk
-		shop1_cost = 20
-		shop1_cost *= (danis_milk_times_bought * 0.5)
-		roundf(shop1_cost)
+		shop1_cost = 10
+		shop1_cost *= (danis_milk_times_bought * 0.3)
+		round(shop1_cost)
 		shop_label1.text = str(shop1_cost)
 	var rand_upgrade2 = randi_range(1,3)
 	if rand_upgrade2 == 1:
 		shop_icon2.add_child(dumbell.instantiate())
 		shop2_item = dumbell
 		shop2_cost = 20
-		shop2_cost *= (dumbell_times_bought * 0.5)
+		shop2_cost *= (dumbell_times_bought * 0.3)
 		round(shop2_cost)
 		shop_label2.text = str(shop2_cost)
 	if rand_upgrade2 == 2:
 		shop_icon2.add_child(sharp_shooter.instantiate())
 		shop2_item = sharp_shooter
 		shop2_cost = 15
-		shop2_cost *= (sharpshooter_times_bought * 0.5)
+		shop2_cost *= (sharpshooter_times_bought * 0.3)
 		round(shop2_cost)
 		shop_label2.text = str(shop2_cost)
 	if rand_upgrade2 == 3:
 		shop_icon2.add_child(danis_milk.instantiate())
 		shop2_item = danis_milk
 		shop2_cost = 15
-		shop2_cost *= (danis_milk_times_bought * 0.5)
-		roundf(shop2_cost)
+		shop2_cost *= (danis_milk_times_bought * 0.3)
+		round(shop2_cost)
 		shop_label2.text = str(shop2_cost)
 	var rand_upgrade3 = randi_range(1,3)
 	if rand_upgrade3 == 1:
@@ -280,16 +287,16 @@ func _open_shop():
 	if rand_upgrade3 == 2:
 		shop_icon3.add_child(sharp_shooter.instantiate())
 		shop3_item = sharp_shooter
-		shop3_cost = 20
+		shop3_cost = 15
 		shop3_cost *= (sharpshooter_times_bought * 0.3)
 		round(shop3_cost)
 		shop_label3.text = str(shop3_cost)
 	if rand_upgrade3 == 3:
 		shop_icon3.add_child(danis_milk.instantiate())
 		shop3_item = danis_milk
-		shop3_cost = 15
-		shop3_cost *= (danis_milk_times_bought * 0.5)
-		roundf(shop3_cost)
+		shop3_cost = 10
+		shop3_cost *= (danis_milk_times_bought * 0.3)
+		round(shop3_cost)
 		shop_label3.text = str(shop3_cost)
 
 
@@ -301,8 +308,13 @@ func _on_texture_button_button_up() -> void:
 			dumbell_times_bought +=1
 		if shop1_item == sharp_shooter:
 			sharpshooter_times_bought +=1
-		if shop2_item == danis_milk:
+		if shop1_item == danis_milk:
 			danis_milk_times_bought +=1
+		shop1_item = soldout.instantiate()
+		shop1_cost = 99999999999999999999
+		shop_icon1.get_child(0).queue_free()
+		shop_icon1.add_child(soldout.instantiate())
+
 func _on_texture_button_3_button_up() -> void:
 	if Global.Player.money >= shop3_cost:
 		Global.Player._upgrades.add_child(shop3_item.instantiate())
@@ -313,6 +325,11 @@ func _on_texture_button_3_button_up() -> void:
 			sharpshooter_times_bought +=1
 		if shop3_item == danis_milk:
 			danis_milk_times_bought +=1
+		shop3_item = soldout.instantiate()
+		shop3_cost = 99999999999999999999
+		shop_icon3.get_child(0).queue_free()
+		shop_icon3.add_child(soldout.instantiate())
+
 
 func _on_texture_button_5_button_up() -> void:
 	_start_wave(current_wave + 1)

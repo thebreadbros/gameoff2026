@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Upgrade_Resource" format=3 uid="uid://cwi14gjk7hhb1"]
+
+[ext_resource type="Script" uid="uid://20drklt0scs0" path="res://scripts/upgrade_resource.gd" id="1_hhdl1"]
+[ext_resource type="Texture2D" uid="uid://2ldtlnwxf07" path="res://assets/Soldout.png" id="2_xw8rv"]
+
+[resource]
+script = ExtResource("1_hhdl1")
+texture = ExtResource("2_xw8rv")
+pierce_buff = 99999999999999
+damage_buff = 100000000000000000
+speed_buff = 99.0
+projectile_speed_buff = 9999.0
+health_buff = 99999999999999
+defense_buff = 99999999999999
+cost = 10000000000000000
+metadata/_custom_type_script = "uid://20drklt0scs0"

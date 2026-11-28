@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bm17p5rqfkg40"]
+
+[ext_resource type="Script" uid="uid://gshnciqedgnk" path="res://Upgrade_base.gd" id="1_wdvmq"]
+[ext_resource type="Resource" uid="uid://cwi14gjk7hhb1" path="res://resources/Soldout.tres" id="2_1dcaa"]
+[ext_resource type="Texture2D" uid="uid://2ldtlnwxf07" path="res://assets/Soldout.png" id="3_odmgd"]
+
+[node name="upgrade" type="Node2D" unique_id=1986979281 node_paths=PackedStringArray("_sprite")]
+script = ExtResource("1_wdvmq")
+_sprite = NodePath("Sprite2D")
+upgrade = ExtResource("2_1dcaa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=44091052]
+texture = ExtResource("3_odmgd")
