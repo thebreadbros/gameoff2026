@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="enemy_resource" format=3 uid="uid://dqaq0668iw46r"]
+
+[ext_resource type="Curve" uid="uid://bhrl4ssebphjh" path="res://resources/difficulty_scaling.tres" id="1_bimkp"]
+[ext_resource type="Script" uid="uid://p0ack8t44dsi" path="res://scripts/enemy_resource.gd" id="1_j5npy"]
+[ext_resource type="PackedScene" uid="uid://cfb63d12w63fj" path="res://scenes/enemies/enemy_projectile.tscn" id="2_6oxle"]
+
+[resource]
+script = ExtResource("1_j5npy")
+_name = "Yellow cadet"
+colour = 2
+max_health = 5
+speed = 1000.0
+damage = 2.0
+projectiles = true
+projectile_speed = 100.0
+projectile_amount = 1
+projectile_cooldown = 5.0
+projectile_scene = ExtResource("2_6oxle")
+value = 4
+difficulty_scale = ExtResource("1_bimkp")
+spawn_wave = 2
+metadata/_custom_type_script = "uid://p0ack8t44dsi"

@@ -220,6 +220,8 @@ wait_time = 7.0
 
 [node name="YellowBasicTimer" type="Timer" parent="enemy_spawn" unique_id=1228964898]
 
+[node name="YellowProjectileTimer" type="Timer" parent="enemy_spawn" unique_id=726234862]
+
 [connection signal="timeout" from="enemy_spawn/Timer" to="enemy_spawn" method="_on_timer_timeout"]
 [connection signal="button_up" from="enemy_spawn/Node2D/shop_window/TextureButton" to="enemy_spawn" method="_on_texture_button_button_up"]
 [connection signal="button_up" from="enemy_spawn/Node2D/shop_window2/TextureButton2" to="enemy_spawn" method="_on_texture_button_2_button_up"]
@@ -234,3 +236,5 @@ wait_time = 7.0
 [connection signal="timeout" from="enemy_spawn/RedprojectileEliteTimer" to="enemy_spawn" method="_on_redprojectile_elite_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn/RedhybridgruntTimer" to="enemy_spawn" method="_on_redhybridgrunt_timer_timeout"]
 [connection signal="timeout" from="enemy_spawn/RedprojectilegruntTimer" to="enemy_spawn" method="_on_redprojectilegrunt_timer_timeout"]
+[connection signal="timeout" from="enemy_spawn/YellowBasicTimer" to="enemy_spawn" method="_on_yellow_basic_timer_timeout"]
+[connection signal="timeout" from="enemy_spawn/YellowProjectileTimer" to="enemy_spawn" method="_on_yellow_projectile_timer_timeout"]

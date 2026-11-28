@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="enemy_resource" format=3 uid="uid://dbpe80xmkfp88"]
+
+[ext_resource type="Script" uid="uid://p0ack8t44dsi" path="res://scripts/enemy_resource.gd" id="1_8c5il"]
+[ext_resource type="Curve" uid="uid://bhrl4ssebphjh" path="res://resources/difficulty_scaling.tres" id="1_sxrxu"]
+
+[resource]
+script = ExtResource("1_8c5il")
+_name = "Yellow Junior"
+colour = 2
+max_health = 3
+speed = 1200.0
+damage = 1.0
+value = 2
+difficulty_scale = ExtResource("1_sxrxu")
+metadata/_custom_type_script = "uid://p0ack8t44dsi"

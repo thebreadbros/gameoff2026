@@ -15,6 +15,7 @@ extends Node2D
 @onready var red_projectile_grunt_timer =$RedprojectilegruntTimer
 
 @onready var yellow_basic_timer = $YellowBasicTimer
+@onready var yellow_projectile_timer = $YellowProjectileTimer
 
 @onready var shop_window1 = $Node2D/shop_window/TextureButton
 @onready var shop_window2 = $Node2D/shop_window2/TextureButton2
@@ -57,6 +58,7 @@ var red_hybrid_grunt = preload("res://scenes/enemies/red/red_hybrid.tscn")
 var red_projectile_grunt = preload("res://scenes/enemies/red/red_projectile_grunt.tscn")
 
 var yellow_basic = preload("res://resources/yellow_basic.tscn")
+var yellow_projectile = preload("res://resources/yellow_projectile.tscn")
 
 var dumbell = preload("res://resources/Dumbell.tscn")
 var sharp_shooter = preload("res://resources/sharp_shooter.tscn")
@@ -120,6 +122,7 @@ func _start_wave(wave: int):
 
 	elif get_parent().colour == "yellow":
 		yellow_basic_timer.start(yellow_basic_spawn_cooldown)
+		yellow_projectile_timer.start(yellow_basic_spawn_cooldown)
 	_wave_timer.start(wave_length)
 	$Node2D.hide()
 	if shop_icon1.get_child(0) != null:
@@ -355,3 +358,8 @@ func _on_redprojectilegrunt_timer_timeout() -> void:
 func _on_yellow_basic_timer_timeout() -> void:
 	_spawn_enemy(yellow_basic)
 	yellow_basic_timer.start(1)
+
+
+func _on_yellow_projectile_timer_timeout() -> void:
+	_spawn_enemy(yellow_projectile)
+	yellow_projectile_timer.start(3.1)

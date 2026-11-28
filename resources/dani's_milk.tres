@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_vbjv4")
 texture = ExtResource("2_nv8s3")
-health_buff = 3
+health_buff = 10
 cost = 10
 metadata/_custom_type_script = "uid://20drklt0scs0"
